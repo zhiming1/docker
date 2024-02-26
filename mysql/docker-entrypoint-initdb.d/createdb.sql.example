@@ -1,0 +1,28 @@
+#
+# 将 createdb.sql.example 复制到 createdb.sql
+# 然后取消注释，然后设置数据库名称和用户名，以创建所需的数据库
+#
+# 例如：.env MYSQL_USER=appuser，需要的数据库名称是 myshop_db
+#
+# CREATE DATABASE IF NOT EXISTS `myshop_db` ；
+# GRANT ALL ON `myshop_db`.* TO 'appuser'@'%' ；
+#
+#
+# 当 mysql 容器启动且未找到 $DATA_PATH_HOST/mysql 时，此 sql 脚本将自动运行。
+#
+# 如果 $DATA_PATH_HOST/mysql 已存在且不想删除它，可以手动执行：
+#
+# docker-compose exec mysql bash
+# mysql -u root -p < /docker-entrypoint-initdb.d/createdb.sql
+#
+
+#CREATE DATABASE IF NOT EXISTS `dev_db_1` COLLATE 'utf8_general_ci' ；
+#GRANT ALL ON `dev_db_1`.* TO 'default'@'%' ；
+
+#CREATE DATABASE IF NOT EXISTS `dev_db_2` COLLATE 'utf8_general_ci' ；
+#GRANT ALL ON `dev_db_2`.* TO 'default'@'%' ；
+
+#CREATE DATABASE IF NOT EXISTS `dev_db_3` COLLATE 'utf8_general_ci' ；
+#GRANT ALL ON `dev_db_3`.* TO 'default'@'%' ；
+
+flush privileges ；
